@@ -1,12 +1,12 @@
-name: Test and build (v7)
+name: Test and build (v7.5)
 
 on:
   pull_request:
     branches:
-      - v7
+      - v7.5
   push:
     branches:
-      - v7
+      - v7.5
 
 jobs:
   lint:

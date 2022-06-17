@@ -65,6 +65,7 @@ export default class Month extends Component {
     onDayTouchEnd: PropTypes.func,
     onDayTouchStart: PropTypes.func,
     onWeekClick: PropTypes.func,
+    today: PropTypes.instanceOf(Date),
   };
 
   renderDay = day => {
@@ -72,7 +73,7 @@ export default class Month extends Component {
     const propModifiers = Helpers.getModifiersFromProps(this.props);
     const dayModifiers = ModifiersUtils.getModifiersForDay(day, propModifiers);
     if (
-      DateUtils.isSameDay(day, new Date()) &&
+      DateUtils.isSameDay(day, this.props.today || new Date()) &&
       !Object.prototype.hasOwnProperty.call(
         propModifiers,
         this.props.classNames.today

@@ -127,6 +127,9 @@ export class DayPicker extends Component {
     onCaptionClick: PropTypes.func,
     onWeekClick: PropTypes.func,
     onTodayButtonClick: PropTypes.func,
+
+    // added in v7.5
+    today: PropTypes.instanceOf(Date),
   };
 
   static defaultProps = {
@@ -173,7 +176,7 @@ export class DayPicker extends Component {
     }
   }
 
-  static VERSION = '7.4.10';
+  static VERSION = '7.5.0';
 
   /**
    * Return the month to be shown in the calendar based on the component props.
